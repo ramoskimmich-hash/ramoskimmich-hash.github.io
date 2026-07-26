@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern, feature-rich calculator with advanced functions, memory operations, and multiple calculation modes.">
+    <title>Advanced Calculator | ramoskimmich-hash</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="display-area">
+                <div class="mode-indicator">
+                    <span id="mode-label">STANDARD</span>
+                    <span class="memory-indicator" id="memory-indicator"></span>
+                </div>
+                <div class="display" id="display">0</div>
+                <div class="sub-display" id="sub-display"></div>
+            </div>
+
+            <div class="buttons">
+                <!-- Row 1: Mode & Memory Controls -->
+                <button class="btn mode-btn" onclick="toggleMode()">MODE</button>
+                <button class="btn memory-btn" onclick="memoryClear()" title="Memory Clear">MC</button>
+                <button class="btn memory-btn" onclick="memoryRecall()" title="Memory Recall">MR</button>
+                <button class="btn memory-btn" onclick="memoryAdd()" title="Memory Add">M+</button>
+                <button class="btn memory-btn" onclick="memorySubtract()" title="Memory Subtract">M-</button>
+
+                <!-- Row 2: Functions -->
+                <button class="btn function-btn" onclick="appendFunction('sqrt')" title="Square Root">√</button>
+                <button class="btn function-btn" onclick="appendFunction('square')" title="Square">x²</button>
+                <button class="btn function-btn" onclick="appendFunction('percent')" title="Percentage">%</button>
+                <button class="btn operator-btn" onclick="appendOperator('/')" title="Divide">÷</button>
+                <button class="btn operator-btn" onclick="deleteLast()" title="Delete Last">⌫</button>
+
+                <!-- Row 3: Numbers & Operations -->
+                <button class="btn number-btn" onclick="appendNumber('7')">7</button>
+                <button class="btn number-btn" onclick="appendNumber('8')">8</button>
+                <button class="btn number-btn" onclick="appendNumber('9')">9</button>
+                <button class="btn operator-btn" onclick="appendOperator('*')" title="Multiply">×</button>
+                <button class="btn function-btn" onclick="appendFunction('reciprocal')" title="1/x">1/x</button>
+
+                <!-- Row 4: Numbers & Operations -->
+                <button class="btn number-btn" onclick="appendNumber('4')">4</button>
+                <button class="btn number-btn" onclick="appendNumber('5')">5</button>
+                <button class="btn number-btn" onclick="appendNumber('6')">6</button>
+                <button class="btn operator-btn" onclick="appendOperator('-')" title="Subtract">−</button>
+                <button class="btn function-btn" onclick="appendFunction('negate')" title="Negate">+/−</button>
+
+                <!-- Row 5: Numbers & Operations -->
+                <button class="btn number-btn" onclick="appendNumber('1')">1</button>
+                <button class="btn number-btn" onclick="appendNumber('2')">2</button>
+                <button class="btn number-btn" onclick="appendNumber('3')">3</button>
+                <button class="btn operator-btn" onclick="appendOperator('+')" title="Add">+</button>
+                <button class="btn function-btn" onclick="appendFunction('pi')" title="Pi">π</button>
+
+                <!-- Row 6: Zero, Decimal, Equals -->
+                <button class="btn number-btn" onclick="appendNumber('0')" style="grid-column: span 2;">0</button>
+                <button class="btn number-btn" onclick="appendNumber('.')">.</button>
+                <button class="btn equals-btn" onclick="calculate()" style="grid-column: span 2;">=</button>
+            </div>
+
+            <button class="btn" onclick="clearDisplay()" style="width: 100%; margin-top: 10px; background: linear-gradient(145deg, #e74c3c, #c0392b); color: white; border: 1px solid rgba(255, 100, 100, 0.3); box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);">CLEAR</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

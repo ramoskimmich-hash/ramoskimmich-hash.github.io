@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A high-end physics game featuring stickman with realistic Newton's Laws simulation.">
+    <title>Physics Game - Stickman | ramoskimmich-hash</title>
+    <link rel="stylesheet" href="physics-game.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>⚛️ Stickman Physics Game</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Velocity:</span>
+                    <span class="stat-value" id="velocity">0.00</span> m/s
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Force:</span>
+                    <span class="stat-value" id="force">0.00</span> N
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Gravity:</span>
+                    <span class="stat-value" id="gravity">9.81</span> m/s²
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Energy:</span>
+                    <span class="stat-value" id="energy">0.00</span> J
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="controls">
+            <div class="control-section">
+                <h3>Movement Controls</h3>
+                <div class="button-group">
+                    <button id="leftBtn" class="control-btn">← Left (A)</button>
+                    <button id="rightBtn" class="control-btn">Right (D) →</button>
+                    <button id="jumpBtn" class="control-btn">Jump (Space)</button>
+                    <button id="dashBtn" class="control-btn">Dash (Shift)</button>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Physics Settings</h3>
+                <div class="slider-group">
+                    <label>Gravity: <span id="gravityValue">9.81</span> m/s²</label>
+                    <input type="range" id="gravitySlider" min="0" max="20" step="0.1" value="9.81">
+                </div>
+                <div class="slider-group">
+                    <label>Friction: <span id="frictionValue">0.85</span></label>
+                    <input type="range" id="frictionSlider" min="0" max="1" step="0.05" value="0.85">
+                </div>
+                <div class="slider-group">
+                    <label>Air Resistance: <span id="airValue">0.98</span></label>
+                    <input type="range" id="airSlider" min="0.9" max="1" step="0.01" value="0.98">
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Game Controls</h3>
+                <div class="button-group">
+                    <button id="resetBtn" class="control-btn reset">Reset Game</button>
+                    <button id="pauseBtn" class="control-btn pause">Pause (P)</button>
+                </div>
+            </div>
+
+            <div class="control-section info">
+                <h3>💡 Newton's Laws</h3>
+                <p><strong>1st Law:</strong> Stickman maintains motion unless force acts upon it</p>
+                <p><strong>2nd Law:</strong> F = ma (Force equals mass times acceleration)</p>
+                <p><strong>3rd Law:</strong> Every action has an equal and opposite reaction</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="physics-game.js"></script>
+</body>
+</html>
